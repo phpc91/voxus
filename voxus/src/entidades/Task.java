@@ -4,6 +4,14 @@ public class Task {
 	
 	private String titulo;
 	private int id;
+	
+	public Task (int id, String nome) {
+		this.id = id;
+		titulo = nome;
+	}
+
+	public Task() {
+	}
 
 	public int getId() {
 		return id;
