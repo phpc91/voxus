@@ -39,8 +39,11 @@
 	<title>Voxus CRUD</title>
 </head>
 <body>
+	<% String[] nomesTasks = (String[]) request.getAttribute("nomesTasks"); %>
 	<div class="centered">
-		Botão para tasks
+		<% for(int i=0; i< nomesTasks.length; i++){ %>
+			Task: <%= nomesTasks[i] %>
+		<% } %>
 	</div>
 </body>
 </html>

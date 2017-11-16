@@ -1,28 +1,41 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.TaskDAO;
+import entidades.Task;
+
 /**
  * Servlet implementation class HomeController
  */
-@WebServlet("/home")
-public class HomeController extends HttpServlet {
+@WebServlet("/tasks")
+public class TaskController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static TaskDAO dao = TaskDAO.getInstance();
 
-    public HomeController() {
+    public TaskController() {
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		ArrayList<Task> tasks = dao.getAllTasks();
+		String[] nomesTasks = new String[tasks.size()];
+		
+		for(int i=0; i<nomesTasks.length; i++) {
+			nomesTasks[i] = tasks.get(i).getTitulo();
+		}
+		
+		request.setAttribute("nomesTasks", nomesTasks);
+		request.getRequestDispatcher("/tasks.jsp").forward(request, response);
 	}
 
 	/**
