@@ -15,12 +15,13 @@ import entidades.Task;
 /**
  * Servlet implementation class HomeController
  */
-@WebServlet("/tasks")
-public class TaskController extends HttpServlet {
+@WebServlet("/dash")
+public class DashController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static TaskDAO dao = TaskDAO.getInstance();
 
-    public TaskController() {
+    public DashController() {
+    	super();
     }
 
 	/**
@@ -35,7 +36,7 @@ public class TaskController extends HttpServlet {
 		}
 		
 		request.setAttribute("nomesTasks", nomesTasks);
-		request.getRequestDispatcher("/tasks.jsp").forward(request, response);
+		request.getRequestDispatcher("/dash.jsp").forward(request, response);
 	}
 
 	/**
