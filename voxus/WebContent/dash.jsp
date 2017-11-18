@@ -46,7 +46,7 @@
 	
 	<div class="centered">
 		<h1>Dashboard</h1>
-		<table style="width:90%; margin:auto" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+		<table style="width:90%; margin:auto" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
 			<thead>
 				<tr>
 					<th class="mdl-data-table__cell--non-numeric">Título</th>
@@ -81,13 +81,13 @@
 			&emsp;
 			<button
 				class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised"
-				onclick="" type="button">
+				onclick="location.href='/voxus/selecionar'" type="button">
 				<strong>Editar</strong>
 			</button>
 			&emsp;
 			<button
 				class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised"
-				onclick="" type="button">
+				onclick="location.href='/voxus/apagar'" type="button">
 				<strong>Apagar</strong>
 			</button>
 		</div>
