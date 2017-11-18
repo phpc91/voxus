@@ -17,7 +17,8 @@
 		.g-signin2>div {
 			margin: 0 auto;
 		}
-</style>
+
+	</style>
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-indigo.min.css">
@@ -33,23 +34,29 @@
 <body>
 	<div class="centered">
 		<h4>Criar Task</h4>
-		<form method="post" action="location.href=''" enctype="multipart/form-data">
+		<form method="post" action="${pageContext.request.contextPath}/criar" enctype="multipart/form-data">
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" id="titulo"> 
+				<input class="mdl-textfield__input" type="text" id="titulo" name="titulo"> 
 				<label class="mdl-textfield__label" for="titulo">Título</label>
 			</div><br>
 			
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" id="desc"> 
-				<label class="mdl-textfield__label" for="desc">Descrição</label>
+				<input class="mdl-textfield__input" type="text" id="descricao" name="descricao"> 
+				<label class="mdl-textfield__label" for="descricao">Descrição</label>
 			</div><br>
 			
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input title="Insira um número de 1 a 5" 
-					class="mdl-textfield__input" type="text" pattern="[1-5]" id="prioridade"> 
+					class="mdl-textfield__input" type="text" pattern="[1-5]" id="prioridade" name="prioridade"> 
 				<label class="mdl-textfield__label" for="prioridade">Prioridade</label>
 			</div><br>
 			
+			<div class="mdl-textfield mdl-js-textfield">
+				<input type="file" name="upload" multiple>
+  			</div>
+			<br><br>
+			<input class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored" 
+				type="submit" value="Salvar Task">
 		</form>
 	</div>
 </body>
