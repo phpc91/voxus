@@ -1,0 +1,3 @@
+<?PHP
+  echo 'Current PHP version: ' . phpversion();
+?>
